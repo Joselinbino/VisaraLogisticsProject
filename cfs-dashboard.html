@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8" />
+    <title>Visara-CFS-Dashboard</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendors/styles/icon-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/from-to.css" />
+    <style>
+      .popup {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed position */
+        z-index: 999;
+        /* Sit on top */
+        left: 50%;
+        /* Center horizontally */
+        top: 50%;
+        /* Center vertically */
+        transform: translate(-50%, -50%);
+        /* Center the div */
+        background-color: #fefefe;
+        border: 1px solid #888;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 80%;
+        max-height: 80%;
+        overflow: auto;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      keyframes animatezoom {
+        from {
+          transform: scale(0);
+        }
+
+        to {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--<div class="pre-loader">
+		<div class="pre-loader-box">
+			<div class="loader-logo">
+				<img src="assets/img/logo/TruckPilot.png" alt="VISARA" />
+			</div>
+			<div class="loader-progress" id="progress_div">
+				<div class="bar" id="bar1"></div>
+			</div>
+			<div class="percent" id="percent1">0%</div>
+			<div class="loading-text">Loading...</div>
+		</div>
+	</div>-->
+
+    <div class="header">
+      <div class="header-left">
+        <div class="menu-icon bi bi-list"></div>
+        <div
+          class="search-toggle-icon bi bi-search"
+          data-toggle="header_search"
+        ></div>
+        <div class="header-search">
+          <form>
+            <div class="form-group mb-0">
+              <i class="dw dw-search2 search-icon"></i>
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Search Here"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="dashboard-setting user-notification">
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle no-arrow"
+              href="javascript:;"
+              data-toggle="right-sidebar"
+            >
+              <i class="dw dw-settings2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="user-info-dropdown">
+          <div class="dropdown">
+            <a
+              class="dropdown-toggle"
+              href="#"
+              role="button"
+              data-toggle="dropdown"
+            >
+              <span class="user-icon">
+                <img src="assets/img/customer/person.svg" alt="" />
+              </span>
+              <span class="user-name" id="Username1">Username</span>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+            >
+              <a class="dropdown-item" href="profile.htm"
+                ><i class="dw dw-user1"></i> Profile</a
+              >
+              <a class="dropdown-item" href="profile.htm"
+                ><i class="dw dw-settings2"></i> Setting</a
+              >
+              <a class="dropdown-item" href="faq.htm"
+                ><i class="dw dw-help"></i> Help</a
+              >
+              <a class="dropdown-item" href="login.html"
+                ><i class="dw dw-logout"></i> Log Out</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-sidebar">
+      <div class="sidebar-title">
+        <h3 class="weight-600 font-16 text-blue">
+          Layout Settings
+          <span class="btn-block font-weight-400 font-12"
+            >User Interface Settings</span
+          >
+        </h3>
+        <div class="close-sidebar" data-toggle="right-sidebar-close">
+          <i class="icon-copy ion-close-round"></i>
+        </div>
+      </div>
+      <div class="right-sidebar-body customscroll">
+        <div class="right-sidebar-body-content">
+          <h4 class="weight-600 font-18 pb-10">Header Background</h4>
+          <div class="sidebar-btn-group pb-30 mb-10">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary header-white active"
+              >White</a
+            >
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary header-dark"
+              >Dark</a
+            >
+          </div>
+
+          <h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
+          <div class="sidebar-btn-group pb-30 mb-10">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary sidebar-light"
+              >White</a
+            >
+            <a
+              href="javascript:void(0);"
+              class="btn btn-outline-primary sidebar-dark active"
+              >Dark</a
+            >
+          </div>
+
+          <div class="reset-options pt-30 text-center">
+            <button class="btn btn-danger" id="reset-settings">
+              Reset Settings
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="left-side-bar">
+      <div class="brand-logo">
+        <a href="index3.html">
+          <h2>VISARA</h2>
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+          <i class="ion-close-round"></i>
+        </div>
+      </div>
+      <div class="menu-block customscroll">
+        <div class="sidebar-menu">
+          <ul id="accordion-menu">
+            <li class="dropdown">
+              <a href="cfs-dashboard.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-house"></span
+                ><span class="mtext">Home</span>
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="javascript:;" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-truck"></span
+                ><span class="mtext">Manage Transports</span>
+              </a>
+              <ul class="submenu">
+                <li>
+                  <a href="#" id="openTransportModal">Select Transports</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="calendar.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-calendar4-week"></span
+                ><span class="mtext">Calendar</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="cfsorder&invoice.html" class="dropdown-toggle no-arrow">
+                <span class="micon bi bi-receipt-cutoff"></span
+                ><span class="mtext">Orders & Invoice</span>
+              </a>
+            </li>
+            <li>
+              <div class="dropdown-divider"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for select transport -->
+    <div
+      class="modal fade"
+      id="transportModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="transportModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="transportModalLabel">
+              Select Transports
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="transportForm">
+              <fieldset>
+                <legend>Transports</legend>
+                <div id="transportList"></div>
+              </fieldset>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="main-container">
+      <div class="pd-ltr-20">
+        <div class="card-box pd-20 height-100-p mb-30">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <img src="assets/img/logo/container-station.jpg" alt="" />
+            </div>
+            <div class="col-md-8">
+              <h4 class="font-20 weight-500 mb-10 text-capitalize">
+                Welcome back
+                <div class="weight-600 font-30 text-blue" id="Username">
+                  Username!
+                </div>
+              </h4>
+              <p class="font-18 max-width-600">
+                This is your CFS (Container Freight Station) Dashboard. Here,
+                you can view and manage your containers, shipments, and other
+                operations.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-3 mb-30">
+            <div class="card-box height-100-p widget-style1">
+              <div class="d-flex flex-wrap align-items-center">
+                <div class="progress-data">
+                  <div id="chart"></div>
+                </div>
+                <div class="widget-data">
+                  <div class="h4 mb-0">0</div>
+                  <div class="weight-600 font-14">Live Orders</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 mb-30">
+            <div class="card-box height-100-p widget-style1">
+              <div class="d-flex flex-wrap align-items-center">
+                <div class="progress-data">
+                  <div id="chart2"></div>
+                </div>
+                <div class="widget-data">
+                  <div class="h4 mb-0">0</div>
+                  <div class="weight-600 font-14">Completed Orders</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 mb-30">
+            <div
+              class="card-box height-100-p widget-style1 d-flex justify-content-center align-items-center"
+            >
+              <!-- Add Truck Button -->
+              <button class="btn btn-primary" onclick="trackOrder()">
+                Track Your Order!
+              </button>
+            </div>
+          </div>
+
+          <div class="col-xl-3 mb-30">
+            <div
+              class="card-box height-100-p widget-style1 d-flex justify-content-center align-items-center"
+            >
+              <!-- Add Truck Button -->
+              <button class="btn btn-primary" onclick="togglePopup()">
+                Book Your Vehicle!
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--Track Order Modal -->
+        <div
+          class="modal fade"
+          id="trackOrderModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+          style="
+            position: fixed;
+            top: 25%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+          "
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Track Your Order
+                </h5>
+              </div>
+              <div class="modal-body">
+                <input
+                  type="text"
+                  id="orderNumberInput"
+                  class="form-control"
+                  placeholder="Enter Order ID"
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="submitOrderNumber()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal for from to form START-->
+        <div id="myPopup" class="popup">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div class="form_wrapper">
+            <div class="form_container">
+              <div class="title_container">
+                <h2>Booking Form</h2>
+              </div>
+              <div class="ro clearfix">
+                <div class="">
+                  <form id="registrationForm" onsubmit="storeFormData(event)">
+                    <div class="input_field">
+                      <label for="cityDeparture">
+                        <span
+                          ><i class="fa-solid fa-location-crosshairs"></i
+                        ></span>
+                        Pickup From:
+                      </label>
+                      <select
+                        name="cityDeparture"
+                        id="cityDeparture"
+                        required
+                        style="width: 100%; border-top: 1px solid rgb(0, 0, 0)"
+                      >
+                        <option value="" selected disabled>
+                          Select Pickup Location
+                        </option>
+                        <!-- Options will be dynamically populated here -->
+                      </select>
+                    </div>
+                    <div class="input_field">
+                      <label for="cityDeliver">
+                        <span><i class="fa-solid fa-location-arrow"></i></span>
+                        Deliver To:
+                      </label>
+                      <select
+                        name="cityDeliver"
+                        id="cityDeliver"
+                        required
+                        style="width: 100%; border-top: 1px solid rgb(0, 0, 0)"
+                      >
+                        <option value="" selected disabled>
+                          Select Drop Location
+                        </option>
+                        <!-- Options will be dynamically populated here -->
+                      </select>
+                    </div>
+                    <input class="button" type="submit" value="Continue" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-box mb-30">
+          <h2 class="h4 pd-20">Recent Orders</h2>
+          <table class="data-table table nowrap">
+            <thead>
+              <tr>
+                <th>OrderID</th>
+                <th>TransportName</th>
+                <th>OrderDate</th>
+                <th>VehicleNo</th>
+                <th>FleetSize</th>
+                <th>Status</th>
+                <!--<th class="datatable-nosort">Action</th>-->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic rows will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- js -->
+    <script src="vendors/scripts/core.js"></script>
+    <script src="vendors/scripts/script.min.js"></script>
+    <script src="vendors/scripts/process.js"></script>
+    <script src="vendors/scripts/layout-settings.js"></script>
+    <script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="vendors/scripts/dashboard.js"></script>
+    <script src="js/cfs-dashboard.js"></script>
+  </body>
+</html>

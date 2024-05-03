@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Vehicles</title>
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="css/ratecard.css" />
+
+    <style>
+      /* CSS for dropdown container */
+      .dropdown-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+        /* Add margin to separate from other content */
+        position: relative;
+        z-index: 1000;
+        width: 50%;
+        left: 25%;
+        /* Ensure it's above other elements */
+      }
+
+      /* CSS for dropdown section */
+      .dropdown-section {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        width: 45%;
+        /* Adjust width as needed */
+      }
+
+      /* CSS for dropdown label */
+      .dropdown-section label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* CSS for dropdown select/input */
+      .dropdown-section select,
+      .dropdown-section input[type="text"] {
+        width: calc(100% - 20px);
+        /* Adjust width to account for padding */
+        height: 30px;
+        margin-top: 5px;
+        /* Add some spacing below the input/select */
+      }
+
+      /* Footer Styles */
+      /* .footer {
+	background-color: #333;
+	color: #fff;
+	padding: 30px 0;
+	font-size: 14px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+}
+
+.footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.footer .footer-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.footer .footer-section {
+	width: 45%;
+	margin-bottom: 30px;
+}
+
+.footer .footer-section.about h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.footer .footer-section.about p {
+	margin-bottom: 20px;
+}
+
+.footer .footer-section.about .contact span {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.footer .footer-section.about .socials a {
+	color: #fff;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.footer .footer-section.links h2 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.footer .footer-section.links ul {
+	padding: 0;
+	list-style: none;
+}
+
+.footer .footer-section.links ul li {
+	margin-bottom: 10px;
+}
+
+.footer .footer-section.links ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer .footer-section.links ul li a:hover {
+	text-decoration: underline;
+} */
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Logo</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="cfs-dashboard.html" class="nav__link">Home</a>
+            </li>
+          </ul>
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <div class="nav__actions">
+          <i class="ri-search-line nav__search" id="search-btn"></i>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- DROPDOWNS -->
+    <div class="dropdown-container">
+      <!-- Dropdown section for "From" -->
+      <div class="dropdown-section">
+        <label for="cityDeparture">From:</label>
+        <select id="locationSelect">
+          <option value="">Select from dropdown</option>
+          <!-- Options will be dynamically populated here -->
+        </select>
+      </div>
+
+      <!-- Dropdown section for "To" -->
+      <div class="dropdown-section">
+        <label for="toLocation">To:</label>
+        <input type="text" id="toLocation" />
+      </div>
+    </div>
+
+    <!--==================== MAIN ====================-->
+    <div class="container1">
+      <div class="table-container">
+        <table id="associatedRow">
+          <thead>
+            <tr>
+              <th>AssociationType</th>
+              <th>TransportName</th>
+              <th>Vehicle 1</th>
+              <th>Vehicle 2</th>
+              <th>Vehicle 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically populated here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-container">
+        <table id="unassociatedRow">
+          <thead>
+            <tr>
+              <th>AssociationType</th>
+              <th>TransportName</th>
+              <th>Vehicle 1</th>
+              <th>Vehicle 2</th>
+              <th>Vehicle 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically populated here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-section about">
+					<h2 class="logo">Logo</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Nulla felis nunc, consequat non odio nec, aliquam sollicitudin
+						velit. Curabitur mattis turpis vel sapien accumsan, eget bibendum
+						odio accumsan.</p>
+					<div class="contact">
+						<span><i class="ri-phone-line"></i> +123456789</span> <span><i
+							class="ri-mail-line"></i> info@example.com</span>
+					</div>
+					<div class="socials">
+						<a href="#"><i class="ri-facebook-fill"></i></a> <a href="#"><i
+							class="ri-twitter-fill"></i></a> <a href="#"><i
+							class="ri-instagram-fill"></i></a> <a href="#"><i
+							class="ri-linkedin-fill"></i></a>
+					</div>
+				</div>
+				<div class="footer-section links">
+					<h2>Quick Links</h2>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Services</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer> -->
+    <script src="/js/ratecard.js"></script>
+  </body>
+</html>

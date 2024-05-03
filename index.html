@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="./assets/img/logo/logo-icon.png" type="image/x-icon" />
+	<title>Visara - transports</title>
+	<!-- font-awesome/6.2.1  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+	<!-- bootstrap@5.0.2  -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<!-- animate.css  -->
+	<link rel="stylesheet" href="./css/animate.css" />
+	<!-- custome css  -->
+	<link rel="stylesheet" href="css/style.css" />
+	<!-- custome media query  -->
+	<link rel="stylesheet" href="css/responsive.css" />
+	<!-- custome css  -->
+	<link rel="stylesheet" href="css/style.css" />
+	<!-- custome media query  -->
+	<link rel="stylesheet" href="css/responsive.css" />
+
+	 
+
+</head>
+
+<body>
+	<!-- navbar section start -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<div class="container">
+			<h4 class="navbar-brand" href="index.html">
+				<a href="#" class="logo">VISARA</a>
+			</h4>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="service.html">Services</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- navbar section end -->
+	<!-- carousel section start -->
+
+	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<!-- single slid section start -->
+			<div class="carousel-item active">
+				<div class="carousel-bg"></div>
+				<div class="carousel-caption">
+					<h2 class="display-1 fw-bold wow fadeInDown"
+						style="visibility: visible; animation-name: fadeInDown">
+						Future of <br />Transportation partner
+					</h2>
+					<p class="wow fadeInUp" data-wow-delay="300ms"
+						style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+						By leveraging the latest technologies and innovations, we providing a more efficient,
+						sustainable, and accessible way of</br> moving goods from one place to another.
+					</p>
+					<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="showLoginPage()">
+						Register/Login
+					</button>
+					<!--<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="showBookingForm()">
+						Book Truck
+					</button>-->
+					<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="trackOrder()">
+						Track Your Order
+					</button>
+				</div>
+			</div>
+
+
+
+			<script>
+				function showBookingForm() {
+
+					window.location.href = ("bookingform.html");
+				}
+				function showLoginPage() {
+
+					window.location.href = ("login.html");
+				}
+
+			</script>
+
+
+			<!-- single slid section start  -->
+			<div class="carousel-item">
+				<div class="carousel-bg"></div>
+				<div class="carousel-caption">
+					<h2 class="display-1 fw-bold wow fadeInDown"
+						style="visibility: visible; animation-name: fadeInDown">
+						Future of <br />Transportation partner
+					</h2>
+					<p class="wow fadeInUp" data-wow-delay="300ms" style="
+                visibility: visible;
+                animation-delay: 300ms;
+                animation-name: fadeInUp;
+              ">
+						By leveraging the latest technologies and innovations, we
+						providing a more efficient, sustainable, and accessible way of</br>
+						moving goods from one place to another.
+					</p>
+					<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="showLoginPage()">
+						Register/Login
+					</button>
+					<!--<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="showBookingForm()">
+						Book Truck
+					</button>-->
+					<button class="btn primary-btn wow fadeInLeft" data-wow-delay="600ms"
+						style="visibility: visible; animation-delay: 600ms; animation-name: fadeInLeft;"
+						onclick="trackOrder()">
+						Track Your Order
+					</button>
+				</div>
+			</div>
+			<!-- single slid section end  -->
+
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+			data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+			data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<!-- carousel section end -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="trackOrderModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+		style="position: fixed; top: 25%; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 1050;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Track Your Order</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<input type="text" id="orderNumberInput" class="form-control" placeholder="Enter Order ID">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="submitOrderNumber()">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Add Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		function trackOrder() {
+			// Show the modal
+			$('#trackOrderModal').modal('show');
+		}
+
+		function submitOrderNumber() {
+			// Get the order number from the input field
+			let orderId = document.getElementById('orderNumberInput').value;
+
+			// Construct the URL with the order number as a parameter
+			let url = 'tracking.html?orderId=' + encodeURIComponent(orderId);
+
+			// Redirect the user to the new page
+			window.location.href = url;
+		}
+	</script>
+
+	<!-- about section start -->
+	<section class="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 order-2">
+					<div class="about-content">
+						<div class="about-info p-5">
+							<div class="sec-title">
+								<h3 class="sub-title">WELCOME TO VISARA</h3>
+								<h2>Providing full range of transportation</h2>
+							</div>
+
+							<p class="mb-3">
+								Go beyond logistics, make the world go round and
+								revolutionize business.We take pride in serving our customers safely. together with
+								passion.
+							</p>
+							<blockquote class="blockquote mb-4">
+								<p>
+									You can simplifying your freight & logistics needs with a
+									personal approach on visara company.
+								</p>
+							</blockquote>
+
+							<div class="row">
+								<div class="col-12 col-md-7">
+									<ul>
+										<li class="py-3">
+											<i class="fa-solid fa-user-shield"></i> Safety and
+											reliable service
+										</li>
+										<li>
+											<i class="fa-solid fa-calendar-days"></i> On - time
+											delivery service
+										</li>
+									</ul>
+								</div>
+								<div class="col-12 col-md-5">
+									<div class="youtube-btn">
+										<img src="./assets/img/about/about-3.jpg" alt="" />
+										<div class="wrapper">
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 order-1">
+					<div class="about-banner">
+						<!--<div class="about-expert-info text-white px-3">
+							<h2 class="fs-1">2</h2>
+							<p class="fs-4">Years of work experience</p>
+						</div>-->
+						<div class="about-banner-img shadow d-none d-md-block">
+							<img class="img-fluid" src="./assets/img/about/about-2.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- about section end -->
+	<!-- work section start -->
+	<section class="work-area pt-5">
+		<div class="container">
+			<div class="sec-title text-center">
+				<h3 class="sub-title">HOW WE WORK</h3>
+				<h2>
+					We aim to contribute well to
+					<br />
+					your company
+				</h2>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<!-- single item start  -->
+					<div class="work-block wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp">
+						<div class="work-card">
+							<div class="work-card-body">
+								<div class="work-card-icon">
+									<i class="fa-solid fa-box"></i>
+								</div>
+								<h4>Replenishment and Picking</h4>
+								<p>
+									Building strong relationships with suppliers ensures timely delivery of
+									replenishment orders and enables negotiation of favorable terms and pricing.
+								</p>
+							</div>
+							<a href="#" class="work-btn">
+								<span class="count">
+									<span>01</span>
+								</span>
+								<span class="work-btn-title">more detail</span>
+							</a>
+						</div>
+					</div>
+					<!-- single item end  -->
+				</div>
+
+
+				<div class="col-md-3">
+					<!-- single item start  -->
+					<div class="work-block wow fadeInUp animated" data-wow-delay="900ms" style="
+                visibility: visible;
+                animation-delay: 900ms;
+                animation-name: fadeInUp;
+              ">
+						<div class="work-card">
+							<div class="work-card-body">
+								<div class="work-card-icon">
+									<i class="fa-solid fa-box"></i>
+								</div>
+								<h4>Transportation Process</h4>
+								<p>
+									Establishing timelines for pick-up, transit, and delivery based on customer
+									requirements, availability of resources, and transportation mode capabilities.
+								</p>
+							</div>
+							<a href="#" class="work-btn">
+								<span class="count">
+									<span>02</span>
+								</span>
+								<span class="work-btn-title">more detail</span>
+							</a>
+						</div>
+					</div>
+					<!-- single item end  -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- work section end -->
+
+	<!-- faqs Section start -->
+	<section class="faqs py-5">
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="faqs-content">
+						<div class="faqs-info">
+							<div class="sec-title">
+								<h3 class="sub-title">FREQUENTLY ASKED QUESTIONS</h3>
+								<h2>Things you need to know and we know your’s</h2>
+							</div>
+							<!-- single faq item start  -->
+							<div class="faq-block">
+								<div class="faq-content">
+									<i class="faq-icon fa-solid fa-arrow-right"></i>
+									<h4>Who We Are?</h4>
+									<p>
+										We're not just offering
+										solutions; we're providing a spectrum of choices, ensuring
+										that every solution aligns seamlessly with your distinctive
+										requirements.
+									</p>
+								</div>
+							</div>
+							<!-- single faq item end  -->
+							<!-- single faq item start  -->
+							<div class="faq-block">
+								<div class="faq-content">
+									<i class="faq-icon fa-solid fa-arrow-right"></i>
+									<h4>Solutions and specialized</h4>
+									<p>
+										Our aim is to optimize and improve your supply chain so that
+										we can give you the best service.We provide multiple drop off and pickup
+										locations so you
+										don't have to worry. And you should not face any kind...
+									</p>
+								</div>
+							</div>
+							<!-- single faq item end  -->
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="faqs-accordion shadow wow fadeInRight animated"
+						style="visibility: visible; animation-name: fadeInRight">
+						<div class="accordion" id="accordionPanelsStayOpenExample">
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+									<button class="accordion-button" type="button" data-bs-toggle="collapse"
+										data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+										aria-controls="panelsStayOpen-collapseOne">
+										What warranties do I have for shipment?
+									</button>
+								</h2>
+								<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+									aria-labelledby="panelsStayOpen-headingOne">
+									<div class="accordion-body">
+										There are many variations of passages of available, but
+										the majority have suffered alteration in some form.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+										aria-controls="panelsStayOpen-collapseTwo">
+										What is included in your services?
+									</button>
+								</h2>
+								<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+									aria-labelledby="panelsStayOpen-headingTwo">
+									<div class="accordion-body">
+										There are many variations of passages of available, but
+										the majority have suffered alteration in some form.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="panelsStayOpen-headingThree">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+										aria-controls="panelsStayOpen-collapseThree">
+										What are the payment methods?
+									</button>
+								</h2>
+								<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+									aria-labelledby="panelsStayOpen-headingThree">
+									<div class="accordion-body">
+										There are many variations of passages of available, but
+										the majority have suffered alteration in some form.
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="panelsStayOpen-headingFour">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+										aria-controls="panelsStayOpen-collapseFour">
+										How fast I get my order?
+									</button>
+								</h2>
+								<div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+									aria-labelledby="panelsStayOpen-headingFour">
+									<div class="accordion-body">
+										There are many variations of passages of available, but
+										the majority have suffered alteration in some form.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- faqs Section end -->
+
+	<!-- Client Section start -->
+
+	<!-- Client Section end -->
+	<!-- call-to-action Section start -->
+	<section class="call-to-action">
+		<div class="container">
+			<div class="call-to-action-box p-5">
+				<div class="row py-3">
+					<div class="col-md-6">
+						<h2>Fastest & secure way to transport anything anytime</h2>
+					</div>
+					<div
+						class="col-md-6 d-flex mt-5 mt-md-0 justify-content-sm-center justify-content-md-end align-items-center">
+						<div>
+							<button class="btn primary-btn">Discover more</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- call-to-action Section end -->
+	<!-- footer Section start -->
+	<footer>
+		<div class="big-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 p-3">
+						<img class="img-fluid" src="./assets/img/logo/" alt="" />
+						<p>
+							Many in the transportation industry now rely on us for our
+							dedication to efficiency and reliability. Our tailored solutions
+							ensure that every journey by road is executed with precision.
+						</p>
+						<form action="" method="post" class="footer-from">
+							<div class="input-group mb-3">
+								<input type="text" class="form-control p-3" placeholder="Email Address"
+									aria-label="Email Address" aria-describedby="button-addon2" />
+
+								<button type="button" id="button-addon2" class="btn primary-btn">
+									Go
+								</button>
+							</div>
+						</form>
+						<ul class="social-link">
+							<li>
+								<a href="#"><i class="fa-brands fa-twitter"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-pinterest"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fa-brands fa-instagram"></i></a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3 offset-lg-1">
+						<h5>Explore</h5>
+						<ul class="user-link">
+							<li>
+								<a href="#">About Company</a>
+							</li>
+							<li>
+								<a href="#">Services</a>
+							</li>
+
+							<li>
+								<a href="#">Contact Us</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h5>Contact</h5>
+						<ul class="contact-list">
+							<li>
+								<i class="fa-solid fa-square-phone-flip"></i>
+								<strong>Phone</strong>
+								<a href="tel:+8801777361861">+91 9840411499</a>
+							</li>
+							<li>
+								<i class="fa-solid fa-envelope"></i>
+								<strong>Email</strong>
+								<a href="mailto:rhshuvo121@gmail.com">visaratech@gmail.com</a>
+							</li>
+							<li>
+								<i class="fa-solid fa-map-location"></i>
+								<strong>Address</strong>
+								<p>No.211/A RS Road,Reddypalayam, Attipattu,Chennai-600120</p>
+							</li>
+							<li>
+								<i class="fa-solid fa-clock"></i>
+								<strong>Mon - Sat</strong>
+								<p>10.00am to 6.00pm (Sun: Closed)</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				.
+			</div>
+		</div>
+		<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="copyright-text">
+					<p>© Copyright 2024 by <a href="index.html">Visara</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer Section end -->
+
+	<!-- scroll-to-top  -->
+	<a href="" id="scroll-to-top"></a>
+
+	<!-- jQuery js  -->
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+	<!-- bootstrap@5.0.2 js  -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Swiper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<!-- wow js -->
+	<script src="js/wow.min.js"></script>
+	<!-- gotop js  -->
+	<script src="js/illbeback.min.js"></script>
+	<script src="js/countMe.min.js"></script>
+	<!-- custome js  -->
+	<script src="js/apps.js"></script>
+
+	<script>
+		document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+	</script>
+</body>
+
+</html>

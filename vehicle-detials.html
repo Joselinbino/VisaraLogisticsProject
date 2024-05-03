@@ -1,0 +1,324 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vehicle-Information</title>
+    <!-- Stylesheets -->
+    <!-- bootstrap v3.3.6 css -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- font-awesome/6.2.1  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!-- fancybox css -->
+
+    <link href="css/frontend.css" rel="stylesheet" />
+    <link href="css/style1.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/vehicle-register.css" rel="stylesheet" />
+    <style>
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Center vertically */
+        align-items: center;
+        /* Center horizontally */
+        background-color: #fefefe;
+        margin: 20% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 15%;
+        height: 20%;
+      }
+
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 20px;
+        height: 20px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #loadingText {
+        text-align: center;
+        font-size: 16px;
+        margin-top: 10px;
+        /* Adjust margin as needed */
+      }
+    </style>
+  </head>
+
+  <body
+    class="home header-transparent header-sticky header-v1 hide-topbar-mobile"
+  >
+    <div id="page">
+      <!-- Preloader-->
+      <div class="preloader" style="display: none"></div>
+
+      <div id="loadingPopup" class="modal">
+        <div class="modal-content">
+          <div class="loader"></div>
+          <p id="loadingText">Loading...</p>
+        </div>
+      </div>
+
+      <!-- masthead -->
+      <header
+        id="masthead"
+        class="site-header clearfix minimized"
+        style="top: 0px"
+      >
+        <div class="header-main clearfix">
+          <div class="container mobile_relative">
+            <div class="row">
+              <div class="site-logo col-md-3 col-sm-6 col-xs-6">
+                <a href="index.html" class="logo">
+                  <img src="" alt="VISARA" class="logo-dark hide-logo" />
+                </a>
+              </div>
+            </div>
+            <!--<a href="#" class="navbar-toggle">
+						<span class="navbar-icon">
+							<span class="navbars-line"></span>
+						</span>
+					</a>-->
+          </div>
+        </div>
+      </header>
+
+      <!-- masthead end -->
+
+      <!--Page Header-->
+      <div class="page-header title-area">
+        <div class="header-title">
+          <div class="container" style="background-image: url()">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="page-title">VEHICLE INFORMATION</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumb-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-sm-12 col-xs-12 site-breadcrumb">
+                <nav class="breadcrumb">
+                  <a class="home" href="ratecard.html"><span>Back</span></a>
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <span>VehicleInformation</span>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Page Header end-->
+
+      <section class="whychoose-1 secpadd">
+        <div class="container">
+          <div class="row quote1forms">
+            <div class="col-md-12">
+              <form id="registrationForm">
+                <div class="fh-form request-form">
+                  <div class="row">
+                    <div class="field col-md-4">
+                      <label>Vehicle Model </label>
+                      <input
+                        placeholder="Vehicle Model"
+                        name="vehicleModel"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>Year of Manufacture </label>
+                      <input
+                        placeholder="Year of Manufacture"
+                        name="yearOfManufacture"
+                        type="text"
+                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>License Plate Number</label>
+                      <input
+                        name="licensePlateNumber"
+                        placeholder="License Plate Number"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field col-md-4">
+                      <label>Insurance Company </label>
+                      <input
+                        name="insuranceCompany"
+                        placeholder="Insurance Company"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>Insurance Policy Number </label>
+                      <input
+                        name="insurancePolicyNumber"
+                        placeholder="Insurance Policy Number"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>Insurance Validity (Year) </label>
+                      <input
+                        name="insuranceValidity"
+                        id="insuranceValidityYearInput"
+                        placeholder="YYYY"
+                        type="text"
+                        pattern="\d{4}"
+                        title="Enter a valid year (YYYY)"
+                        maxlength="4"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field col-md-4">
+                      <label>Driver's Name </label>
+                      <input
+                        name="driverName"
+                        placeholder="Driver's Name"
+                        type="text"
+                        required
+                      />
+                    </div>
+
+                    <div class="field col-md-4">
+                      <label>Driver's Phone </label>
+                      <input
+                        name="driverPhone"
+                        placeholder="Driver's Phone"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field col-md-4">
+                      <label>Transport Name </label>
+                      <input
+                        name="transportName"
+                        placeholder="Transport Name"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>Transport Location </label>
+                      <input
+                        name="transportLocation"
+                        placeholder="Transport Location"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <div class="field col-md-4">
+                      <label>Transport's Phone </label>
+                      <input
+                        name="transportPhone"
+                        placeholder="Transport Phone"
+                        type="text"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field col-md-4">
+                      <label>FleetSize </label>
+                      <input
+                        name="fleetSize"
+                        placeholder="Fleet Size"
+                        type="text"
+                        required
+                      />
+                    </div>
+                    <!--<div class="field col-md-4">
+                                        <label>Vehicle Capacity(Kg)<span class="require">*</span></label>
+                                        <input name="vehicleCapacity" placeholder="Vehicle Capacity" type="text"
+                                            oninput="this.value=this.value.replace(/[^0-9]/g,'')" required>
+                                    </div>-->
+                    <div class="field col-md-4">
+                      <label>Vehicle Price(₹)</label>
+                      <input
+                        name="vehiclePrice"
+                        placeholder="Vehicle Price(/Km)"
+                        type="text"
+                        oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="field col-md-4 submit">
+                      <input
+                        value="Book Vehicle"
+                        class="fh-btn"
+                        onclick="bookVehicle()"
+                        type="submit"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/js/vehicle-detials.js"></script>
+  </body>
+</html>

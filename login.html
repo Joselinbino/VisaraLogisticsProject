@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In/Sign Up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <!-- font-awesome/6.2.1  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- bootstrap@5.0.2  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- animate.css  -->
+    <link rel="stylesheet" href="./css/animate.css" />
+
+    <style>
+      /* Style for the select container */
+      .input-box {
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      /* Style for the select label */
+      .input-box label {
+        color: rgb(192, 192, 192);
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Style for the select dropdown */
+      .styled-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: transparent;
+        border: 1px solid rgb(192, 192, 192);
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+
+      /* Style for the arrow icon in the select dropdown */
+      .styled-select::after {
+        content: "\25BC";
+        /* Unicode character for down arrow */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: rgb(255, 255, 255);
+      }
+
+      /* Style for the select options */
+      .styled-select option {
+        background-color: #fff;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- navbar section start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <h4 class="navbar-brand" href="index.html">
+          <a href="#" class="logo">VISARA</a>
+        </h4>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar section end -->
+    <div class="content">
+      <div class="button-group">
+        <button class="switchSignin btnActive">Login</button>
+        <button class="switchSignup">Register</button>
+      </div>
+
+      <form action="#" class="signin-form">
+        <div class="input-box">
+          <label for="signinEmail">Email</label>
+          <input
+            type="email"
+            id="signinEmail"
+            name="email"
+            placeholder="Email ID"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <label for="signinPassword">Password</label>
+          <input
+            type="password"
+            id="signinPassword"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <span class="passIcon" id="signinPassIcon"
+            ><i class="fa-solid fa-eye"></i
+          ></span>
+        </div>
+        <div class="check-box">
+          <input type="checkbox" id="signinCheckBox" />
+          <label for="signinCheckBox">Remember me</label>
+        </div>
+
+        <input type="submit" value="LOGIN" id="btn-signin" />
+        <hr />
+        <a href="#">Forgot password?</a>
+      </form>
+
+      <form action="#" class="signup-form display-none" id="signup-form">
+        <div class="input-box">
+          <label for="userType">Select User Type:</label>
+          <select id="userType" name="userType" class="styled-select" required>
+            <option value="Container Freight Station">
+              Container Freight Station(CFS)
+            </option>
+            <option value="Transport">Transport</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label for="signupUsername">Transport / CFS Name</label>
+          <input
+            type="text"
+            id="signupUsername"
+            name="username"
+            placeholder="Transport / CFS"
+            required
+          />
+        </div>
+        <div class="input-box">
+          <label for="signupEmail">Email</label>
+          <input
+            type="email"
+            id="signupEmail"
+            name="email"
+            placeholder="Email ID"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <label for="signupPassword">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <span class="passIcon" id="signupPassIcon"
+            ><i class="fa-solid fa-eye"></i
+          ></span>
+        </div>
+        <!--<div class="check-box">
+				<input type="checkbox" id="signupCheckBox">
+				<label for="signupCheckBox">Remember me</label>
+			</div>-->
+
+        <input type="submit" value="REGISTER" id="btn-signup" />
+      </form>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- jQuery js  -->
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <!-- bootstrap@5.0.2 js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <!-- gotop js  -->
+    <script src="js/illbeback.min.js"></script>
+    <script src="js/countMe.min.js"></script>
+    <!-- custome js  -->
+    <script src="js/apps.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>
